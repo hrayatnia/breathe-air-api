@@ -41,7 +41,7 @@ if 'DATABASE_URL' in os.environ:
     MIDDLEWARE = [
         'django.middleware.security.SecurityMiddleware',
         'whitenoise.middleware.WhiteNoiseMiddleware',
-    ] + MIDDLEWARE
+    ] + list(MIDDLEWARE)
 
     # Allow all host headers (feel free to make this more specific)
     ALLOWED_HOSTS = ['*']
