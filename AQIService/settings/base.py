@@ -91,7 +91,7 @@ DATABASES = {
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'public', 'media')
-
+SECRET_KEY = "0!f^p$0k4i30#b2h=k(_9c!l4u36os#$euaimbp!+k%7u_=fz*"
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
