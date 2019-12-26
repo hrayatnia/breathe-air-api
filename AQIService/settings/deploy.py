@@ -21,7 +21,7 @@ if 'MEDIA_ROOT' in os.environ:
 
 if 'DATABASE_URL' in os.environ:
     # Dokku
-    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+    SECRET_KEY = "0!f^p$0k4i30#b2h=k(_9c!l4u36os#$euaimbp!+k%7u_=fz*"
 
     import dj_database_url
     # Update database configuration with $DATABASE_URL.
@@ -52,7 +52,7 @@ if 'DATABASE_URL' in os.environ:
 
     WEBSERVER_ROOT = os.path.join(PROJECT_ROOT, 'www')
 else:
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = "0!f^p$0k4i30#b2h=k(_9c!l4u36os#$euaimbp!+k%7u_=fz*"
 
     DATABASES['default']['NAME'] = 'AQIService_%s' % ENVIRONMENT.lower()
     DATABASES['default']['USER'] = 'AQIService_%s' % ENVIRONMENT.lower()
