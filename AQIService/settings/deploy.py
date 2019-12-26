@@ -9,7 +9,7 @@ os.environ.setdefault('CACHE_HOST', '127.0.0.1:11211')
 os.environ.setdefault('BROKER_HOST', '127.0.0.1:5672')
 
 #: deploy environment - e.g. "staging" or "production"
-ENVIRONMENT = os.environ['ENVIRONMENT']
+ENVIRONMENT = os.environ.get('ENVIRONMENT',"production")
 
 
 DEBUG = False
