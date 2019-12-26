@@ -13,7 +13,7 @@ MIDDLEWARE += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
-INTERNAL_IPS = ('127.0.0.1', )
+INTERNAL_IPS = ('127.0.0.1', '0.0.0.0')
 
 #: Don't send emails, just print them on stdout
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

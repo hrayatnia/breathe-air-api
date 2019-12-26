@@ -2,3 +2,4 @@
 python-memcached==1.59
 gunicorn==19.9.0
 newrelic
+django-heroku==0.3.1
