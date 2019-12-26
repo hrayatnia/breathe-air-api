@@ -37,7 +37,7 @@ if 'DATABASE_URL' in os.environ:
         'django.contrib.staticfiles',
     ])
 
-    tuple(list(MIDDLEWARE).remove('django.middleware.security.SecurityMiddleware'))
+    #tuple(list(MIDDLEWARE).remove('django.middleware.security.SecurityMiddleware'))
     MIDDLEWARE = [
         'django.middleware.security.SecurityMiddleware',
         'whitenoise.middleware.WhiteNoiseMiddleware',
