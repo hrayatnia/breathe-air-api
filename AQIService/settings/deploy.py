@@ -90,7 +90,7 @@ else:
     default_smtp_port = 25
 EMAIL_PORT = os.environ.get('EMAIL_PORT', default_smtp_port)
 EMAIL_SUBJECT_PREFIX = '[Aqiservice %s] ' % ENVIRONMENT.title()
-DEFAULT_FROM_EMAIL = 'noreply@%(DOMAIN)s' % os.environ
+DEFAULT_FROM_EMAIL = 'noreply@%(gmail.com)s' % os.environ
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 CSRF_COOKIE_SECURE = True
@@ -99,7 +99,7 @@ SESSION_COOKIE_SECURE = True
 
 SESSION_COOKIE_HTTPONLY = True
 
-ALLOWED_HOSTS = [os.environ['DOMAIN']]
+ALLOWED_HOSTS = ["*"]
 
 # Use template caching on deployed servers
 for backend in TEMPLATES:
