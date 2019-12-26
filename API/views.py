@@ -10,11 +10,13 @@ from .data.Response import AQIResponse,Encoder
 
 @csrf_exempt
 def location_post(request):
-    data = json.loads(request.body)
-    lat = data.get("lat",-33.6892)
-    lon = data.get("long",51.3890)
-    coord = Coordinate(lat=lat,lng= lon)
-    data = AQIAPI().get_by_coordinate(coord=coord)
-    data = AQIResponse(data["data"])
-    data = Encoder().encode(data)
-    return HttpResponse(data,status=200,content_type='application/json')
+    if request.method == "POST":
+        data = json.loads(request.body)
+        lat = data.get("lat",-33.6892)
+        lon = data.get("long",51.3890)
+        coord = Coordinate(lat=lat,lng= lon)
+        data = AQIAPI().get_by_coordinate(coord=coord)
+        data = AQIResponse(data["data"])
+        data = Encoder().encode(data)
+        return HttpResponse(data,status=200,content_type='application/json')
+    return HttpResponse("method not allowed",status=405)
