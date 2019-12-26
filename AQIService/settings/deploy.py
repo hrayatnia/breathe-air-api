@@ -90,7 +90,7 @@ else:
     default_smtp_port = 25
 EMAIL_PORT = os.environ.get('EMAIL_PORT', default_smtp_port)
 EMAIL_SUBJECT_PREFIX = '[Aqiservice %s] ' % ENVIRONMENT.title()
-DEFAULT_FROM_EMAIL = 'noreply@%(gmail.com)s' % os.environ
+DEFAULT_FROM_EMAIL = 'noreply@gmail.com'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 CSRF_COOKIE_SECURE = True
