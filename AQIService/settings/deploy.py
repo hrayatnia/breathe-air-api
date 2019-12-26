@@ -12,7 +12,7 @@ os.environ.setdefault('BROKER_HOST', '127.0.0.1:5672')
 ENVIRONMENT = os.environ.get('ENVIRONMENT',"production")
 
 
-DEBUG = False
+DEBUG = True
 
 
 if 'MEDIA_ROOT' in os.environ:
@@ -37,7 +37,7 @@ if 'DATABASE_URL' in os.environ:
         'django.contrib.staticfiles',
     ])
 
-    MIDDLEWARE.remove('django.middleware.security.SecurityMiddleware')
+    tuple(list(MIDDLEWARE).remove('django.middleware.security.SecurityMiddleware'))
     MIDDLEWARE = [
         'django.middleware.security.SecurityMiddleware',
         'whitenoise.middleware.WhiteNoiseMiddleware',
