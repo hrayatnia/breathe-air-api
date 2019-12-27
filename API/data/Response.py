@@ -41,7 +41,7 @@ class Location:
     def __init__(self,city):
         self.lat = city["geo"][0]
         self.lon = city["geo"][1]
-        self.name =city["name"].split(",")[1]
+        self.name =city["name"].split(",")[0]
 
 class ResponseData:
     AQIIndex = None
