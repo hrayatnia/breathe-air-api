@@ -1,11 +1,8 @@
-from json import JSONEncoder
+
 from uuid import uuid4
 from datetime import datetime
 from ..helper.time_tostamp import to_timestamp
 import json
-class Encoder(JSONEncoder):
-    def default(self, o):
-        return o.__dict__
 
 class AQIResponse:
     uuid = None

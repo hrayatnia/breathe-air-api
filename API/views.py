@@ -5,7 +5,9 @@ import json
 from .data.MockDataResponse import DATA
 from .data.Coordinate import Coordinate
 from .AQIcn.AQIAPI import AQIAPI
-from .data.Response import AQIResponse,Encoder
+from .data.Response import AQIResponse
+from .helper.Encoder import Encoder
+from .data.AllStationResponse import AllStationResponse
 # Create your views here.
 
 @csrf_exempt
@@ -17,6 +19,16 @@ def location_post(request):
         coord = Coordinate(lat=lat,lng= lon)
         data = AQIAPI().get_by_coordinate(coord=coord)
         data = AQIResponse(data["data"])
+        data = Encoder().encode(data)
+        return HttpResponse(data,status=200,content_type='application/json')
+    return HttpResponse("method not allowed",status=405)
+
+
+@csrf_exempt
+def get_all_data(request):
+    if request.method == "GET":
+        data = AQIAPI().get_all()
+        data = AllStationResponse(data["data"])
         data = Encoder().encode(data)
         return HttpResponse(data,status=200,content_type='application/json')
     return HttpResponse("method not allowed",status=405)
