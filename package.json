@@ -59,7 +59,7 @@
     "immutable": "^3.8.2",
     "isparta": "^4.1.1",
     "jquery": "^3.4.1",
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.5.0",
     "jsdom-global": "^3.0.2",
     "less": "^3.10.3",
     "mocha": "^6.2.1",
